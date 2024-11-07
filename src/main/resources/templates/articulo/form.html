@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Artículo</title>
+</head>
+<body>
+    <h1>Formulario de Artículo</h1>
+
+    <form action="/articulo/form" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea><br>
+
+        <label for="departamento">Departamento:</label>
+        <input type="text" id="departamento" name="departamento" value="" required><br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" value="${articulo.precio}" required><br>
+
+        <label for="tienePrime">¿Tiene Prime?:</label>
+        <input type="checkbox" id="tienePrime" name="tienePrime" ${articulo.tienePrime ? 'checked' : ''}><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" value="${articulo.stock}" required><br>
+
+        <label for="descuento">Descuento (%):</label>
+        <input type="number" id="descuento" name="descuento" step="0.01" value="${articulo.descuento}" required><br>
+
+        <label for="valoracion">Valoración:</label>
+        <select id="valoracion" name="valoracion">
+            <option value="MUY_MAL" ${articulo.valoracion == 'MUY_MAL' ? 'selected' : ''}>Muy Mal</option>
+            <option value="MAL" ${articulo.valoracion == 'MAL' ? 'selected' : ''}>Mal</option>
+            <option value="REGULAR" ${articulo.valoracion == 'REGULAR' ? 'selected' : ''}>Regular</option>
+            <option value="BIEN" ${articulo.valoracion == 'BIEN' ? 'selected' : ''}>Bien</option>
+            <option value="MUY_BIEN" ${articulo.valoracion == 'MUY_BIEN' ? 'selected' : ''}>Muy Bien</option>
+        </select><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="/articulo/all">Volver al listado</a>
+</body>
+</html>

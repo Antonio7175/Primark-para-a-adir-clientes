@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Artículo</title>
+</head>
+<body>
+    <h1>Detalles del Artículo</h1>
+
+    <p><strong>Nombre:</strong> ${articulo.nombre}</p>
+    <p><strong>Descripción:</strong> ${articulo.descripcion}</p>
+    <p><strong>Departamento:</strong> ${articulo.departamento}</p>
+    <p><strong>Precio:</strong> ${articulo.precio}€</p>
+    <p><strong>¿Tiene Prime?:</strong> ${articulo.tienePrime ? 'Sí' : 'No'}</p>
+    <p><strong>Stock:</strong> ${articulo.stock}</p>
+    <p><strong>Descuento:</strong> ${articulo.descuento}%</p>
+    <p><strong>Valoración:</strong> ${articulo.valoracion}</p>
+
+    <a href="/articulo/all">Volver al listado</a>
+    <a href="/articulo/form/${articulo.id}">Editar</a>
+</body>
+</html>

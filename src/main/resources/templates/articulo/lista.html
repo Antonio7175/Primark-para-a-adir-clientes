@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Artículos</title>
+</head>
+<body>
+    <h1>Listado de Artículos</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Departamento</th>
+                <th>Precio</th>
+                <th>Tiene Prime</th>
+                <th>Stock</th>
+                <th>Descuento</th>
+                <th>Valoración</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="articulo" items="${articulos}">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="/articulo/form/${articulo.id}">Editar</a> |
+                        <a href="/articulo/delete/${articulo.id}">Eliminar</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+
+    <a href="/articulo/form">Crear nuevo artículo</a>
+</body>
+</html>
